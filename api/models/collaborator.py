@@ -1,7 +1,7 @@
 from sqlalchemy import Column, BigInteger, String, ForeignKey, DECIMAL, Boolean, TIMESTAMP
 from sqlalchemy.orm import relationship
 from sqlalchemy.sql import func
-from shared.database import Base
+from api.shared.database import Base
 
 class Collaborator(Base):
     __tablename__ = 'collaborators'
