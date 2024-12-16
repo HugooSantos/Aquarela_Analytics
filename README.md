@@ -62,8 +62,7 @@ As principais bibliotecas e tecnologias utilizadas para o desenvolvimento desta 
 - **.env**: Armazena variáveis de ambiente, como a URL do banco de dados e chaves secretas.
   
 - **requirements.txt**: Arquivo que contém as dependências do projeto.
-  
-Essa estrutura ajuda a manter o código bem organizado, modular e escalável, além de seguir boas práticas para desenvolvimento com FastAPI, SQLAlchemy e Alembic.
+
 
 
 ## Funcionalidades ⚙️
