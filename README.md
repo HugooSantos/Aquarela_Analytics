@@ -49,17 +49,22 @@ As principais bibliotecas e tecnologias utilizadas para o desenvolvimento desta 
 
 ### Explicação da Estrutura de pastas 📂
 
-- **api/**: Contém o código principal da aplicação, incluindo a inicialização do FastAPI, modelos do banco de dados, controladores de endpoints e   lógica de negócio.
-- **main.py**: Onde a aplicação FastAPI é configurada e os endpoints são definidos.
-- **models.py**: Define os modelos do banco de dados, usando SQLAlchemy.
-- **schemas.py**: Contém os schemas do Pydantic para validação de dados.
-- **services/**: Lógica de negócio para manipulação de dados, como a criação, atualização e remoção de funcionários e cargos.
-- **routers/**: Define os controladores que implementam as rotas da API.
-- **utils/**: Funções auxiliares, como o gerenciamento de senhas (por exemplo, utilizando bcrypt).
-  
+- **api/**: Contém o código principal da aplicação, incluindo a inicialização do FastAPI, modelos do banco de dados, controladores de endpoints e lógica de negócio.
+  - **main.py**: Onde a aplicação FastAPI é configurada e os endpoints são definidos.
+  - **models.py**: Define os modelos do banco de dados, usando SQLAlchemy.
+  - **schemas.py**: Contém os schemas do Pydantic para validação de dados. É utilizado para garantir que as requisições e respostas estejam no formato correto.
+  - **services/**: Contém a lógica de negócios para manipulação de dados, como a criação, atualização e remoção de colaboradores e cargos.
+  - **routers/**: Define os controladores que implementam as rotas da API.
+  - **utils/**: Funções auxiliares para tarefas complementares.
+  - **repositories/**: Contém as classes responsáveis pela interação direta com o banco de dados. A camada de repositório abstrai as consultas e operações no banco.
 - **migrations/**: Contém os arquivos de migração do banco de dados gerados pelo Alembic.
-- **.env**: Armazena variáveis de ambiente, como a URL do banco de dados.
-- **requirements.txt**: Arquivo com as dependências do projeto.
+  
+- **.env**: Armazena variáveis de ambiente, como a URL do banco de dados e chaves secretas.
+  
+- **requirements.txt**: Arquivo que contém as dependências do projeto.
+  
+Essa estrutura ajuda a manter o código bem organizado, modular e escalável, além de seguir boas práticas para desenvolvimento com FastAPI, SQLAlchemy e Alembic.
+
 
 ## Funcionalidades ⚙️
 
