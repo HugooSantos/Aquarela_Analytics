@@ -37,14 +37,15 @@ As principais bibliotecas e tecnologias utilizadas para o desenvolvimento desta 
 
 - **FastAPI**: Framework moderno e rápido para a construção de APIs RESTful.
 - **Uvicorn**: Servidor ASGI rápido para rodar a aplicação.
-- **SQLAlchemy**: ORM (Object-Relational Mapper) para interagir com o banco de dados de forma eficiente.
+- **SQLAlchemy**: ORM para interagir com o banco de dados.
 - **SQLAlchemy-Utils**: Ferramentas adicionais para trabalhar com SQLAlchemy.
 - **Psycopg2**: Conector PostgreSQL para Python.
 - **Alembic**: Ferramenta de migração de banco de dados para SQLAlchemy.
 - **Dotenv**: Carrega variáveis de ambiente a partir de um arquivo `.env`.
-- **Pytest**: Framework de testes para garantir a qualidade do código.
+- **Pytest**: Framework de testes.
 - **HTTPX**: Cliente HTTP assíncrono para realizar testes de API.
 - **Bcrypt**: Biblioteca de hashing para senhas, garantindo segurança no armazenamento de dados sensíveis.
+- **PostgreSQL 15**: Foi o banco de dados proposto para essa API.
 
 ### Explicação da Estrutura de pastas 📂
 
@@ -74,7 +75,27 @@ Esta API oferece os seguintes endpoints:
 ## Como Executar 🏃‍♂️
 
 
-1. **Configurar Variáveis de Ambiente**: 
+    
+1. **Clonar e Instalar Dependências**
+    
+    via ssh:
+    ```bash
+    git clone git@github.com:HugooSantos/Aquarela_Analytics.git
+    ```
+    via https:
+
+    ```bash
+    git clone https://github.com/HugooSantos/Aquarela_Analytics.git
+    ```
+    
+    entre no diretorio:
+
+    ```bash
+    cd Aquarela_Analytics
+    pip install -r requirements.txt
+    ```
+
+2. **Configurar Variáveis de Ambiente**: 
 
    Copie o arquivo .env.example para um novo arquivo .env e adicione as informações do seu banco de dados:
    ```bash
@@ -90,7 +111,7 @@ Esta API oferece os seguintes endpoints:
    POSTGRES_PORT=sua porta (normalmente é 5432) 
    ```
 
-2. **Instalar Dependências**:
+3. **Instalar Dependências**:
 
    - Primeiro, crie e ative seu ambiente virtual:
 
@@ -104,25 +125,24 @@ Esta API oferece os seguintes endpoints:
     python3 -m venv venv
     source venv/bin/activate
     ```
-    
-    - Clone o repositório e instale as dependências:
 
+    agora rode: 
     ```bash
-    git clone <url-do-repositorio>
-    cd <diretorio-do-repositorio>
-    pip install -r requirements.txt
+    python create_database.py
     ```
+    
+    Aqui você criara o seu banco de dados.
 
     -logo após faça os passos abaixo dentro do seu ambiente virtual:
   
-3. **Rodar as Migrations**: 
+4. **Rodar as Migrations**: 
    - Execute as migrations do Alembic para configurar o banco de dados:
 
    ```bash 
    alembic upgrade head
    ```
 
-4. **Rodar os Testes**: 
+5. **Rodar os Testes**: 
     
    - Para rodar os testes e garantir que tudo está funcionando corretamente, execute:
 
@@ -130,4 +150,18 @@ Esta API oferece os seguintes endpoints:
     pytest api/tests/test_collaborator.py
    ```
     
+
+6. **Ver Openapi**: 
+    
+   - Para ver o seu openapi rode no terminal com a venv ativa
+
+    ```bash 
+    uvicorn api.main:app --reload
+    ```
+   - acesse:
+
+    ```bash 
+    http://localhost:8000/docs
+    ```
+
 
