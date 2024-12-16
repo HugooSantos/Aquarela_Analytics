@@ -43,7 +43,7 @@ def find(collaborator_id: int,
     return collaborator_service.find(db=db, collaborator_id=collaborator_id)
 
 
-@router.post("/", response_model=CollaboratorSchema, status_code=200)
+@router.post("/", response_model=CollaboratorSchema, status_code=201)
 def create(schema: 
     CreateCollaboratorSchema,
     db: Session = Depends(get_db))-> CollaboratorSchema:

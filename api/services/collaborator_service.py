@@ -18,7 +18,7 @@ def get_all(db: Session) -> List[Collaborator]:
 
 def find(db: Session, collaborator_id: int) -> Collaborator:
     collaborator = collaborator_repository.get_by_id(db=db,
-                                      collaborator_id=collaborator_id) 
+                                                     collaborator_id=collaborator_id) 
     
     if collaborator is None:
         raise HTTPException(status_code=404, detail="Collaborator not found")
