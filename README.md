@@ -72,6 +72,32 @@ Esta API oferece os seguintes endpoints:
 - **Alterar Senha**: Atualiza a senha de um funcionário.
 - **Alterar Status**: Modifica o status de contratação de um funcionário.
 
+
+
+## Validações Adicionadas 🛡️
+Foram implementadas diversas validações para garantir a consistência e a integridade dos dados relacionados aos colaboradores e suas funções no sistema. Veja abaixo as principais validações realizadas:
+
+- **Validação de Colaborador Existente**:
+
+    Verifica se o colaborador existe no sistema antes de realizar qualquer operação. Caso contrário, retorna um erro com a mensagem "Collaborator not found".
+
+- **Validação de Líderes**:
+
+    Verifica se o código do líder informado é válido.
+
+    Garante que o líder possui permissões de liderança antes de ser atribuído a um colaborador.
+
+- **Validação de Permissão para Liderança**:
+
+    Confirma que colaboradores sem um código de líder possuem a função adequada para liderar (role_code precisa ser TL).
+
+- **Promoção de Salário**:
+
+    Garante que, em caso de promoção, o novo salário seja maior do que o salário atual.
+    Promoção de Cargo:
+
+    Verifica se o código do novo cargo representa uma posição hierarquicamente superior ao cargo atual.
+
 ## Como Executar 🏃‍♂️
 
 
