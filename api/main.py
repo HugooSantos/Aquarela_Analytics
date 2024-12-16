@@ -1,7 +1,9 @@
 from fastapi import FastAPI
-from sqlalchemy.orm import Session
+from api.routers import collaborator
 
 app = FastAPI()
+
+app.include_router(collaborator.router, prefix="/collaborators", tags=["collaborator"])
 
 @app.get("/")
 def root():
