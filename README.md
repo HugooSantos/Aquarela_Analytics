@@ -118,7 +118,6 @@ Foram implementadas diversas validações para garantir a consistência e a inte
 
     ```bash
     cd Aquarela_Analytics
-    pip install -r requirements.txt
     ```
 
 2. **Configurar Variáveis de Ambiente**: 
@@ -150,6 +149,11 @@ Foram implementadas diversas validações para garantir a consistência e a inte
     ```bash
     python3 -m venv venv
     source venv/bin/activate
+    ```
+    - instale as Dependências
+
+    ```bash
+    pip install -r requirements.txt
     ```
 
     agora rode: 
