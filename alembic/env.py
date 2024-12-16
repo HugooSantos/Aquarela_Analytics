@@ -22,7 +22,6 @@ if config.config_file_name is not None:
 
 from api.models.role import Role
 from api.models.collaborator import Collaborator
-from api.models.CollaboratorHierarchy import CollaboratorHierarchy
 
 from api.shared.database import Base
 target_metadata = Base.metadata
